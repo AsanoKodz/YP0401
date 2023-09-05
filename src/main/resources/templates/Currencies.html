@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валют</title>
+</head>
+<body>
+<h1>Конверт</h1>
+<form method="post" action="/converter">
+<input type="text" name="a">
+<select name="mod" id="vs">
+    <option value="a1">RUB</option>
+    <option value="a2">USD</option>
+    <option value="a3">JPY</option>
+</select>
+<a th:text="${temtt}"></a>
+<select name="mod" id="vj">
+    <option value="a4">RUB</option>
+    <option value="a5">USD</option>
+    <option value="a6">JPY</option>
+</select>
+</form>
+<br>
+<a href="home">Перети на домашнюю</a>
+</body>
+</html>

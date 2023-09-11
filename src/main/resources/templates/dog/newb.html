@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание новой собаки</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Новая собака</h1>
+<form th:method="POST" th:action="@{/dog}" th:object="${dog}">
+    <label for="nickname">Кличка</label>
+    <input type="text" id="nickname" th:field="*{nickname}">
+    <label for="age">Возраст</label>
+    <input type="number" id="age" th:field="*{age}">
+    <label for="master">Хозяин</label>
+    <input type="text" id="master" th:field="*{master}">
+    <label for="breed">Порода</label>
+    <input type="text" id="breed" th:field="*{breed}">
+    <input type="submit" value="Создать">
+</form>
+<a  href="/dog">Вернуться к списку</a>
+</body>
+</html>

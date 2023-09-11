@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробная информация о собаке</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Подробнее о собаке</h1>
+<p th:text="${dog.getId()}"></p>
+<p th:text="${dog.getNickname()}"></p>
+<p th:text="${dog.getAge()}"></p>
+<p th:text="${dog.getMaster()}"></p>
+<p th:text="${dog.getBreed()}"></p>
+
+<a th:href="@{/dog/{id}/edit(id = ${dog.getId()})}">Изменить</a>
+
+<form th:method="delete" th:action="@{/dog/{id}(id = ${dog.getId()})}">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить">
+
+</form>
+<a  href="/dog">Вернуться к списку</a>
+</body>
+</html>

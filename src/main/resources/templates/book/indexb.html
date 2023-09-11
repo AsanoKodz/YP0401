@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Все книги</h1>
+<div th:each="book : ${books}">
+    <a th:href="@{'/book/' + ${book.getId()}}" th:text="${book.getName()} + ', ' + ${book.getAuthor()} + ', ' +
+        ${book.getNumberofpages()} + ', ' + ${book.getYear()}"></a>
+</div>
+
+<a href="/book/new">+ новая книга</a>
+<br>
+<a href="/charter">Список персонажей</a>
+<br>
+<a href="/dog">Список собак</a>
+<br>
+<a href="/employee">Список пользователей</a>
+<br>
+<a href="/genshin">Список персонажей геншина</a>
+</body>
+</html>

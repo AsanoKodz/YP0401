@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробная информация о персонажах</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Подробнее о персонажах</h1>
+<p th:text="${charter.getId()}"></p>
+<p th:text="${charter.getName()}"></p>
+<p th:text="${charter.getUniverse()}"></p>
+<p th:number="${charter.getArt()}"></p>
+<p th:text="${charter.getLink()}"></p>
+
+<a th:href="@{/charter/{id}/edit(id = ${charter.getId()})}">Изменить</a>
+
+<form th:method="delete" th:action="@{/charter/{id}(id = ${charter.getId()})}">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить">
+
+</form>
+<a  href="/charter">Вернуться к списку</a>
+</body>
+</html>

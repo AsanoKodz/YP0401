@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание нового пользователя</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Новый поьзователь</h1>
+<form th:method="POST" th:action="@{/employee}" th:object="${employee}">
+    <label for="surname">Фамилия</label>
+    <input type="text" id="surname" th:field="*{surname}">
+    <label for="name">Имя</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="patronymic">Отчество</label>
+    <input type="text" id="patronymic" th:field="*{patronymic}">
+    <label for="post">Должность</label>
+    <input type="text" id="post" th:field="*{post}">
+    <input type="submit" value="Создать">
+</form>
+<a  href="/employee">Вернуться к списку</a>
+</body>
+</html>

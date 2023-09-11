@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Все пользователи</h1>
+<div th:each="employee : ${employees}">
+    <a th:href="@{'/employee/' + ${employee.getId()}}" th:text="${employee.getName()}  + ', ' + ${employee.getSurname()}
+    + ', ' + ${employee.getPatronymic()} + ', ' + ${employee.getPost()}"></a>
+</div>
+
+<a href="/employee/new">+ новый пользователь</a>
+<br>
+<a href="/book">Список книг</a>
+<br>
+<a href="/charter">Список персонажей</a>
+<br>
+<a href="/dog">Список собак</a>
+<br>
+<a href="/genshin">Список персонажей геншина</a>
+</body>
+</html>

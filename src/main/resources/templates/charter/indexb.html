@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список персонажей</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Все персонажи</h1>
+<div th:each="charter : ${charters}">
+    <a th:href="@{'/charter/' + ${charter.getId()}}" th:text="${charter.getName()} + ', ' + ${charter.getUniverse()} + ', ' +
+        ${charter.getArt()} + ', ' + ${charter.getLink()}"></a>
+</div>
+
+<a href="/charter/new">+ новый персонаж </a>
+<br>
+<a href="/book">Список книг</a>
+<br>
+<a href="/dog">Список собак</a>
+<br>
+<a href="/employee">Список пользователей</a>
+<br>
+<a href="/genshin">Список персонажей геншина</a>
+</body>
+</html>

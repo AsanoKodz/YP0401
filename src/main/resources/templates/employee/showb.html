@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробная информация о пользователе</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Подробнее о пользователе</h1>
+<p th:text="${employee.getId()}"></p>
+<p th:text="${employee.getName()}"></p>
+<p th:text="${employee.getSurname()}"></p>
+<p th:text="${employee.getPatronymic()}"></p>
+<p th:text="${employee.getPost()}"></p>
+
+<a th:href="@{/employee/{id}/edit(id = ${employee.getId()})}">Изменить</a>
+
+<form th:method="delete" th:action="@{/employee/{id}(id = ${employee.getId()})}">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить">
+
+</form>
+<a  href="/employee">Вернуться к списку</a>
+</body>
+</html>

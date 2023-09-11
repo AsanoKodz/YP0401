@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список собак</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Все собаки</h1>
+<div th:each="dog : ${dogs}">
+    <a th:href="@{'/dog/' + ${dog.getId()}}" th:text="${dog.getNickname()} + ', ' + ${dog.getAge()} + ', ' +
+        ${dog.getMaster()} + ', ' + ${dog.getBreed()}"></a>
+</div>
+
+<a href="/dog/new">+ новая собака</a>
+<br>
+<a href="/book">Список книг</a>
+<br>
+<a href="/charter">Список персонажей</a>
+<br>
+<a href="/employee">Список пользователей</a>
+<br>
+<a href="/genshin">Список персонажей геншина</a>
+</body>
+</html>

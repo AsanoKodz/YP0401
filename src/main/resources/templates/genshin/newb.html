@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание нового персонажа из геншина</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Новый персонаж геншина</h1>
+<form th:method="POST" th:action="@{/genshin}" th:object="${genshin}">
+    <label for="name">Имя</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="gender">Пол</label>
+    <input type="text" id="gender" th:field="*{gender}">
+    <label for="element">Элемент</label>
+    <input type="text" id="element" th:field="*{element}">
+    <label for="weapon">Тип оружия</label>
+    <input type="text" id="weapon" th:field="*{weapon}">
+    <input type="submit" value="Создать">
+</form>
+<a  href="/genshin">Вернуться к списку</a>
+</body>
+</html>

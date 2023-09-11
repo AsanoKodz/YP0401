@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробная информация</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Подробнее о книге</h1>
+<p th:text="${book.getId()}"></p>
+<p th:text="${book.getName()}"></p>
+<p th:text="${book.getAuthor()}"></p>
+<p th:number="${book.getNumberofpages()}"></p>
+<p th:number="${book.getYear()}"></p>
+
+<a th:href="@{/book/{id}/edit(id = ${book.getId()})}">Изменить</a>
+
+<form th:method="delete" th:action="@{/book/{id}(id = ${book.getId()})}">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить">
+
+</form>
+<a  href="/book">Вернуться к списку</a>
+</body>
+</html>

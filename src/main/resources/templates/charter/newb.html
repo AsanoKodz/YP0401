@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание нового персонажа</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Новый персонаж</h1>
+<form th:method="POST" th:action="@{/charter}" th:object="${charter}">
+    <label for="name">Имя персонажа</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="universe">Вселенная</label>
+    <input type="text" id="universe" th:field="*{universe}">
+    <label for="art">Количество артов</label>
+    <input type="number" id="art" th:field="*{art}">
+    <label for="link">Ссылка</label>
+    <input type="text" id="link" th:field="*{link}">
+    <input type="submit" value="Создать">
+</form>
+<a  href="/charter">Вернуться к списку</a>
+</body>
+</html>

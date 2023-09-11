@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список персонажей из геншина</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Все пресонажи из геншина</h1>
+<div th:each="genshin : ${genshins}">
+    <a th:href="@{'/genshin/' + ${genshin.getId()}}" th:text="${genshin.getName()} + ', ' + ${genshin.getGender()} + ', ' +
+        ${genshin.getElement()} + ', ' + ${genshin.getWeapon()}"></a>
+</div>
+
+<a href="/genshin/new">+ новый персонаж из геншина</a>
+<br>
+<a href="/book">Список книг</a>
+<br>
+<a href="/charter">Список персонажей</a>
+<br>
+<a href="/dog">Список собак</a>
+<br>
+<a href="/employee">Список пользователей</a>
+</body>
+</html>

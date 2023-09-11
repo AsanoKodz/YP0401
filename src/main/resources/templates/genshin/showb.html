@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробная информация о геншин персонаже</title>
+    <link rel="stylesheet" href="/style.css"  >
+</head>
+<body>
+<h1>Подробнее о персонаже из геншина</h1>
+<p th:text="${genshin.getId()}"></p>
+<p th:text="${genshin.getName()}"></p>
+<p th:text="${genshin.getGender()}"></p>
+<p th:text="${genshin.getElement()}"></p>
+<p th:text="${genshin.getWeapon()}"></p>
+
+<a th:href="@{/genshin/{id}/edit(id = ${genshin.getId()})}">Изменить</a>
+
+<form th:method="delete" th:action="@{/genshin/{id}(id = ${genshin.getId()})}">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить">
+
+</form>
+<a  href="/genshin">Вернуться к списку</a>
+</body>
+</html>
